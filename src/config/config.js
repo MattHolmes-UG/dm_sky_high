@@ -1,3 +1,7 @@
+import katlImg from "assets/img/sidebar-1.jpg";
+import zbaaImg from "assets/img/pexels-photo-723240.jpeg";
+
+
 const BASE_API_URL = "https://opensky-network.org/api";
 const querylimit = 10;
 const openSkyApiEndPoints = {
@@ -15,22 +19,26 @@ const MAJOR_AIRPORTS = [
     country: "US",
     IATA: "ATL",
     ICAO: "KATL",
+    avatar: katlImg
   },
   {
     name: "Beijing Capital International Airport",
     city: "Chaoyang-Shunyi, Beijing",
     country: "China",
     IATA: "PEK",
+    avatar: zbaaImg,
     ICAO: "ZBAA",
   },
   {
     name: "Los Angeles International Airport",
     city: "Los Angeles, California",
     country: "United States",
+    avatar: katlImg,
     IATA: "LAX",
     ICAO: "KLAX",
   },
   {
+    avatar: katlImg,
     name: "Dubai International Airport",
     city: "Garhoud, Dubai",
     country: "UAE",
@@ -38,6 +46,7 @@ const MAJOR_AIRPORTS = [
     ICAO: "OMDB",
   },
   {
+    avatar: katlImg,
     name: "Tokyo Haneda Airport",
     city: "Ōta, Tokyo",
     country: "Japan",
@@ -45,6 +54,8 @@ const MAJOR_AIRPORTS = [
     ICAO: "RJTT",
   },
   {
+    avatar: katlImg,
+    avatar: katlImg,
     name: "O'Hare International Airport",
     city: "Chicago, Illinois",
     country: "United States",
@@ -52,6 +63,7 @@ const MAJOR_AIRPORTS = [
     ICAO: "KORD",
   },
   {
+    avatar: katlImg,
     name: "London Heathrow Airport",
     city: "Hillingdon, London",
     country: "UK",
@@ -61,6 +73,7 @@ const MAJOR_AIRPORTS = [
   {
     name: "Shanghai Pudong International Airport",
     city: "Pudong, Shanghai",
+    avatar: katlImg,
     country: "China",
     IATA: "PVG",
     ICAO: "ZSPD",
@@ -68,11 +81,13 @@ const MAJOR_AIRPORTS = [
   {
     name: "Charles de Gaulle Airport",
     city: "Roissy-en-France, Île-de-France (Paris)",
+    avatar: katlImg,
     country: "France",
     IATA: "CDG",
     ICAO: "LFPG",
   },
   {
+    avatar: katlImg,
     name: "Charles de Gaulle Airport",
     city: "Roissy-en-France, Île-de-France (Paris)",
     country: "France",

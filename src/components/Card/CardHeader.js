@@ -19,6 +19,7 @@ export default function CardHeader(props) {
     [classes.cardHeader]: true,
     [classes[color + "CardHeader"]]: color,
     [classes.cardHeaderPlain]: plain,
+    [classes.bgImage]: plain,
     [classes.cardHeaderStats]: stats,
     [classes.cardHeaderIcon]: icon,
     [className]: className !== undefined

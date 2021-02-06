@@ -54,6 +54,7 @@ export default function AdminNavbarLinks() {
     userAuth.signOut();
     history.push('/login');
     handleCloseProfile();
+    sessionStorage.setItem('loggedOut', true);
   };
   return (
     <div>

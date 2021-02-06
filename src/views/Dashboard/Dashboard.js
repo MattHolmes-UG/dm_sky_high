@@ -3,30 +3,16 @@ import React, { useEffect } from "react";
 import ChartistGraph from "react-chartist";
 // @material-ui/core
 import { makeStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
-// @material-ui/icons
-import Store from "@material-ui/icons/Store";
-import Warning from "@material-ui/icons/Warning";
-import DateRange from "@material-ui/icons/DateRange";
-import LocalOffer from "@material-ui/icons/LocalOffer";
-import Update from "@material-ui/icons/Update";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import AccessTime from "@material-ui/icons/AccessTime";
-import Accessibility from "@material-ui/icons/Accessibility";
-import BugReport from "@material-ui/icons/BugReport";
-import Code from "@material-ui/icons/Code";
-import Cloud from "@material-ui/icons/Cloud";
 // core components
-import GridItem from "components/AirportModalCard/node_modules/components/Grid/GridItem.js.js";
-import GridContainer from "components/AirportModalCard/node_modules/components/Grid/GridContainer.js.js";
-import CustomTabs from "components/AirportModalCard/node_modules/components/CustomTabs/CustomTabs.js.js";
-import Danger from "components/AirportModalCard/node_modules/components/Typography/Danger.js.js";
-import Card from "components/AirportModalCard/node_modules/components/Card/Card.js.js";
-import CardHeader from "components/AirportModalCard/node_modules/components/Card/CardHeader.js.js";
-import CardIcon from "components/AirportModalCard/node_modules/components/Card/CardIcon.js.js";
-import CardBody from "components/AirportModalCard/node_modules/components/Card/CardBody.js.js";
-import CardFooter from "components/AirportModalCard/node_modules/components/Card/CardFooter.js.js";
-import Modal from "components/AirportModalCard/node_modules/components/Modal/Modal.js.js";
+import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "components/Grid/GridContainer.js";
+import Card from "components/Card/Card.js";
+import CardHeader from "components/Card/CardHeader.js";
+import CardBody from "components/Card/CardBody.js";
+import CardFooter from "components/Card/CardFooter.js";
+import Modal from "components/Modal/Modal.js";
 import AirportModalCard from "components/AirportModalCard/AirportModalCard.js";
 
 import {
@@ -100,7 +86,7 @@ export default function Dashboard() {
                 open={airport.name === open}
                 id={airport.name}
                 handleClose={() => setOpen(0)}
-                content={<AirportModalCard airport={airport} timeStr={timeStr} />}
+                content={<AirportModalCard airport={airport}begin={begin} end={end} timeStr={timeStr} />}
               />
               <Card
                 onClick={() => {

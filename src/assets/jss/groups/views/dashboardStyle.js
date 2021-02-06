@@ -7,6 +7,12 @@ import {
 } from "assets/jss/general.js";
 
 const dashboardStyle = {
+  root: {
+    display: "flex",
+    "& > * + *": {
+      marginLeft: "25px",
+    },
+  },
   successText: {
     color: successColor[0],
   },

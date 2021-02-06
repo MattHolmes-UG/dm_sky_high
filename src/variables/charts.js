@@ -71,7 +71,7 @@ const dailySalesChart = {
 
 const emailsSubscriptionChart = {
   data: {
-    labels: ["12am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
+    labels: ["11am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
     series: [[542, 443, 320, 780, 553, 453, 610, 756, 895]],
   },
   options: {
@@ -123,7 +123,7 @@ const emailsSubscriptionChart = {
 
 const completedTasksChart = {
   data: {
-    labels: ["12am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
+    labels: ["11am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
     series: [[230, 750, 450, 300, 280, 240, 200, 190]]
   },
   options: {

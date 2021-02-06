@@ -19,7 +19,7 @@ const cardImagesStyles = {
   },
   cardImg: {
     width: "100%",
-    borderRadius: "calc(.25rem - 1px)"
+    // borderRadius: "calc(.25rem - 1px)"
   }
 };
 
