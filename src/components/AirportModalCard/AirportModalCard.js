@@ -60,7 +60,11 @@ export default function AirportModalCard({ airport, timeStr, begin, end }) {
                 </CardIcon>
                 <p className={classes.cardCategory}>Departures</p>
                 <h3 className={classes.cardTitle}>
-                  {departures >= 0 ? departures : <CircularProgress />}
+                  {departures >= 0 ? (
+                    departures
+                  ) : (
+                    <CircularProgress variant="determinate" value={progress} />
+                  )}
                 </h3>
               </CardHeader>
               <CardFooter stats>
@@ -86,7 +90,11 @@ export default function AirportModalCard({ airport, timeStr, begin, end }) {
                 </CardIcon>
                 <p className={classes.cardCategory}>Arrivals</p>
                 <h3 className={classes.cardTitle}>
-                  {arrivals >= 0 ? arrivals : <CircularProgress />}
+                  {arrivals >= 0 ? (
+                    arrivals
+                  ) : (
+                    <CircularProgress variant="determinate" value={progress} />
+                  )}
                 </h3>
               </CardHeader>
               <CardFooter stats>
