@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -22,9 +22,7 @@ import {
 } from "variables/charts.js";
 
 import styles from "assets/jss/groups/views/dashboardStyle.js";
-import OpenSkyServices from "services/openSky";
 import { DEFAULT_FLIGHT_INTERVAL, MAJOR_AIRPORTS } from "config/config";
-import { CircularProgress } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
@@ -43,30 +41,15 @@ const getDateInSecs = (date = null) => {
 
 export default function Dashboard() {
   const [open, setOpen] = React.useState(0);
-  const [interval, setInterval] = React.useState(60);
-  const [flightData, setFlightData] = React.useState([]);
-  const [begin, setBegin] = React.useState(
+  const [interval] = React.useState(60);
+  const [begin] = React.useState(
     getDateInSecs(`01-29-2021 12:59:59`)
   ); //mm-dd-yyyy
-  const [end, setEnd] = React.useState(
+  const [end] = React.useState(
     begin + DEFAULT_FLIGHT_INTERVAL - interval * 60
   );
   const cities = MAJOR_AIRPORTS;
   const classes = useStyles();
-
-  useEffect(() => {
-    OpenSkyServices.getAllFlights(begin, end)
-      .then((data) => {
-        if (data.length === 0) {
-          // alert('No records found for time interval');
-        }
-        setFlightData(data);
-        console.log(data);
-      })
-      .catch((error) => {
-        // alert(error);
-      });
-  }, [cities]);
 
   const timeStr =
     interval >= 60

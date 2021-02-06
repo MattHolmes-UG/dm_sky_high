@@ -1,7 +1,6 @@
 import {
   defaultFont,
   container,
-  primaryColor,
   grayColor,
   blackColor,
 } from "assets/jss/general.js";

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import CustomInput from "components/CustomInput/CustomInput.js";
@@ -52,10 +52,12 @@ export default function Login() {
   const [success, setSuccess] = useState(false);
 
   const handleUsernameChange = (event) => {
+    setErr('');
     setusername(event.target.value);
   };
-
+  
   const handlePswChange = (event) => {
+    setErr('');
     setPsw(event.target.value);
   };
 

@@ -55,7 +55,6 @@ const MAJOR_AIRPORTS = [
   },
   {
     avatar: katlImg,
-    avatar: katlImg,
     name: "O'Hare International Airport",
     city: "Chicago, Illinois",
     country: "United States",
