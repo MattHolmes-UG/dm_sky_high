@@ -15,9 +15,9 @@ const requestErrorHandler = (error) => {
   console.error("Error:", error);
 };
 
-const request = async ({ endpoint, method = "get", body = {}, query = {} }) => {
+const request = async ({ endpoint, apiUrl='', method = "get", body = {}, query = {} }) => {
   console.log("received", endpoint, method, body);
-  let url = `${BASE_API_URL}${endpoint}`;
+  let url = !apiUrl ? `${BASE_API_URL}${endpoint}` : apiUrl;
   const myHeaders = new Headers({
     "Content-Type": "application/json",
   });

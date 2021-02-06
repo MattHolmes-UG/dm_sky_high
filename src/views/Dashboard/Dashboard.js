@@ -17,16 +17,17 @@ import BugReport from "@material-ui/icons/BugReport";
 import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
 // core components
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import CustomTabs from "components/CustomTabs/CustomTabs.js";
-import Danger from "components/Typography/Danger.js";
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardIcon from "components/Card/CardIcon.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
-import Modal from "components/Modal/Modal.js";
+import GridItem from "components/AirportModalCard/node_modules/components/Grid/GridItem.js.js";
+import GridContainer from "components/AirportModalCard/node_modules/components/Grid/GridContainer.js.js";
+import CustomTabs from "components/AirportModalCard/node_modules/components/CustomTabs/CustomTabs.js.js";
+import Danger from "components/AirportModalCard/node_modules/components/Typography/Danger.js.js";
+import Card from "components/AirportModalCard/node_modules/components/Card/Card.js.js";
+import CardHeader from "components/AirportModalCard/node_modules/components/Card/CardHeader.js.js";
+import CardIcon from "components/AirportModalCard/node_modules/components/Card/CardIcon.js.js";
+import CardBody from "components/AirportModalCard/node_modules/components/Card/CardBody.js.js";
+import CardFooter from "components/AirportModalCard/node_modules/components/Card/CardFooter.js.js";
+import Modal from "components/AirportModalCard/node_modules/components/Modal/Modal.js.js";
+import AirportModalCard from "components/AirportModalCard/AirportModalCard.js";
 
 import {
   dailySalesChart,
@@ -36,7 +37,8 @@ import {
 
 import styles from "assets/jss/groups/views/dashboardStyle.js";
 import OpenSkyServices from "services/openSky";
-import { DEFAULT_FLIGHT_INTERVAL, MAJOR_CITIES } from "config/config";
+import { DEFAULT_FLIGHT_INTERVAL, MAJOR_AIRPORTS } from "config/config";
+import { CircularProgress } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
@@ -55,70 +57,16 @@ const getDateInSecs = (date = null) => {
 
 export default function Dashboard() {
   const [open, setOpen] = React.useState(0);
-  const [interval, setInterval] = React.useState(60)
+  const [interval, setInterval] = React.useState(60);
   const [flightData, setFlightData] = React.useState([]);
-  const [begin, setBegin] = React.useState(getDateInSecs(`01-29-2021 12:59:59`)); //mm-dd-yyyy
+  const [begin, setBegin] = React.useState(
+    getDateInSecs(`01-29-2021 12:59:59`)
+  ); //mm-dd-yyyy
   const [end, setEnd] = React.useState(
     begin + DEFAULT_FLIGHT_INTERVAL - interval * 60
   );
-  const cities = MAJOR_CITIES;
+  const cities = MAJOR_AIRPORTS;
   const classes = useStyles();
-
-  const getModalCard = (data, city, timeStr) => {
-    let departures = 0,
-     arrivals = 0
-    data.forEach(flight => {
-      flight.arrivalAirportCandidatesCount ? arrivals += 1 : departures += 1;
-    })
-    return (
-      <Card>
-        <CardHeader color="primary">
-          <h2 className={classes.cardTitleWhite}>{city}</h2>
-          <p className={classes.cardTitleWhite}>
-            Air traffic in the last {timeStr}
-          </p>
-        </CardHeader>
-        <CardBody>
-          <GridContainer>
-            <GridItem xs={12} sm={6} md={6}>
-              <Card>
-                <CardHeader color="warning" stats icon>
-                  <CardIcon color="warning">
-                    <Icon>content_copy</Icon>
-                  </CardIcon>
-                  <p className={classes.cardCategory}>Departures</p>
-                  <h3 className={classes.cardTitle}>{departures}</h3>
-                </CardHeader>
-                <CardFooter stats>
-                  <div className={classes.stats}>
-                    <DateRange />
-                    Last {timeStr}
-                  </div>
-                </CardFooter>
-              </Card>
-            </GridItem>
-            <GridItem xs={12} sm={6} md={6}>
-              <Card>
-                <CardHeader color="success" stats icon>
-                  <CardIcon color="success">
-                    <Store />
-                  </CardIcon>
-                  <p className={classes.cardCategory}>Arrivals</p>
-                  <h3 className={classes.cardTitle}>{arrivals}</h3>
-                </CardHeader>
-                <CardFooter stats>
-                  <div className={classes.stats}>
-                    <DateRange />
-                    Last {timeStr}
-                  </div>
-                </CardFooter>
-              </Card>
-            </GridItem>
-          </GridContainer>
-        </CardBody>
-      </Card>
-    );
-  };
 
   useEffect(() => {
     OpenSkyServices.getAllFlights(begin, end)
@@ -144,21 +92,21 @@ export default function Dashboard() {
   return (
     <div>
       <GridContainer>
-        {cities.map((name, i) => {
+        {cities.map((airport, i) => {
           return (
-            <GridItem key={name + i} xs={12} sm={12} md={4}>
+            <GridItem key={airport.ICAO} xs={12} sm={12} md={4}>
               <Modal
-                key={name}
-                open={name === open}
-                id={name}
+                key={airport.name}
+                open={airport.name === open}
+                id={airport.name}
                 handleClose={() => setOpen(0)}
-                content={getModalCard(flightData.slice(0, 100*(i+1)), name, timeStr)}
+                content={<AirportModalCard airport={airport} timeStr={timeStr} />}
               />
               <Card
                 onClick={() => {
-                  setOpen(name);
+                  setOpen(airport.name);
                 }}
-                key={name + (i - 1)}
+                key={airport.name + (i - 1)}
               >
                 <CardHeader color="success">
                   <ChartistGraph
@@ -182,12 +130,12 @@ export default function Dashboard() {
                   />
                 </CardHeader>
                 <CardBody>
-                  <h4 className={classes.cardTitle}>{name}</h4>
+                  <h4 className={classes.cardTitle}>{airport.name}</h4>
                   <p className={classes.cardCategory}>
                     <span className={classes.successText}>
                       <ArrowUpward className={classes.upArrowCardCategory} />{" "}
                     </span>{" "}
-                    Air traffic in the last {timeStr} for {name}
+                    Air traffic in the last {timeStr}
                   </p>
                 </CardBody>
                 <CardFooter chart>

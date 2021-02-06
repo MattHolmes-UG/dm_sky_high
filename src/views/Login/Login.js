@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 // core components
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/AirportModalCard/node_modules/components/Grid/GridItem.js.js";
+import GridContainer from "components/AirportModalCard/node_modules/components/Grid/GridContainer.js.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
+import Card from "components/AirportModalCard/node_modules/components/Card/Card.js.js";
+import CardHeader from "components/AirportModalCard/node_modules/components/Card/CardHeader.js.js";
 import CardAvatar from "components/Card/CardAvatar.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
+import CardBody from "components/AirportModalCard/node_modules/components/Card/CardBody.js.js";
+import CardFooter from "components/AirportModalCard/node_modules/components/Card/CardFooter.js.js";
 
 import avatar from "assets/img/faces/marc.jpg";
 import { Container } from "@material-ui/core";
