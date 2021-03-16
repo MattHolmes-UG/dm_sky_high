@@ -441,12 +441,13 @@ export default function Dashboard() {
                 </CardHeader>
                 <CardFooter stats>
                   <div className={classes.stats}>
-                    <Danger>
+                    {/* <Danger>
                       <Warning />
-                    </Danger>
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      Get more space
-                    </a>
+                    </Danger> */}
+                    <div className={classes.stats}>
+                      <DateRange />
+                      Across all categories
+                    </div>
                   </div>
                 </CardFooter>
               </Card>
@@ -463,7 +464,7 @@ export default function Dashboard() {
                 <CardFooter stats>
                   <div className={classes.stats}>
                     <DateRange />
-                    Last 24 Hours
+                    Till Date
                   </div>
                 </CardFooter>
               </Card>
@@ -480,7 +481,7 @@ export default function Dashboard() {
                 <CardFooter stats>
                   <div className={classes.stats}>
                     <LocalOffer />
-                    Tracked from Github
+                    Till date
                   </div>
                 </CardFooter>
               </Card>
