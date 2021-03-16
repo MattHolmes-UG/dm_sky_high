@@ -550,11 +550,13 @@ export default function Dashboard() {
                 </CardHeader>
                 <CardBody>
                   <h4 className={classes.cardTitle}>Monthly Sales</h4>
-                  <p className={classes.cardCategory}>Current Year</p>
+                  <p className={classes.cardCategory}>
+                    Year: {lists.yearlyData[0].year}
+                  </p>
                 </CardBody>
                 <CardFooter chart>
                   <div className={classes.stats}>
-                    <AccessTime /> campaign sent 2 days ago
+                    <AccessTime /> Last year of sales
                   </div>
                 </CardFooter>
               </Card>
