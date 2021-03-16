@@ -435,9 +435,9 @@ export default function Dashboard() {
                     <Icon>content_copy</Icon>
                   </CardIcon>
                   <p className={classes.cardCategory}>Total Products</p>
-                  <h3 className={classes.cardTitle}>
+                  <h4 className={classes.cardTitle}>
                     {lists.products ? lists.products.length : 0}
-                  </h3>
+                  </h4>
                 </CardHeader>
                 <CardFooter stats>
                   <div className={classes.stats}>
@@ -458,7 +458,7 @@ export default function Dashboard() {
                     <Store />
                   </CardIcon>
                   <p className={classes.cardCategory}>Revenue</p>
-                  <h3 className={classes.cardTitle}>${totalSales}</h3>
+                  <h4 className={classes.cardTitle}>${totalSales}</h4>
                 </CardHeader>
                 <CardFooter stats>
                   <div className={classes.stats}>
@@ -475,7 +475,7 @@ export default function Dashboard() {
                     <Icon>info_outline</Icon>
                   </CardIcon>
                   <p className={classes.cardCategory}>Total Profit</p>
-                  <h3 className={classes.cardTitle}>{totalProfit}</h3>
+                  <h4 className={classes.cardTitle}>{totalProfit}</h4>
                 </CardHeader>
                 <CardFooter stats>
                   <div className={classes.stats}>
@@ -492,9 +492,9 @@ export default function Dashboard() {
                     <Accessibility />
                   </CardIcon>
                   <p className={classes.cardCategory}>Customers</p>
-                  <h3 className={classes.cardTitle}>
+                  <h4 className={classes.cardTitle}>
                     {lists.customers ? lists.customers.length : 0}
-                  </h3>
+                  </h4>
                 </CardHeader>
                 <CardFooter stats>
                   <div className={classes.stats}>
