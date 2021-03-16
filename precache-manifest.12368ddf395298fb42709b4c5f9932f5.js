@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aae3e0c4327086258999d2f1f0f4f19b",
+    "revision": "b1268876e59bb4b5692ebc181796d27d",
     "url": "/dm_sky_high/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dm_sky_high/static/css/2.d0176e96.chunk.css"
   },
   {
-    "revision": "cefb8ca594d53c535123",
+    "revision": "fbbcd036b5b9a47c5daf",
     "url": "/dm_sky_high/static/css/main.2d60bd9e.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dm_sky_high/static/js/2.f187a73c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cefb8ca594d53c535123",
-    "url": "/dm_sky_high/static/js/main.7ab54a67.chunk.js"
+    "revision": "fbbcd036b5b9a47c5daf",
+    "url": "/dm_sky_high/static/js/main.e4b9625d.chunk.js"
   },
   {
     "revision": "b605231705887f4ba60f",
