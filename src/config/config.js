@@ -1,7 +1,6 @@
 import katlImg from "assets/img/sidebar-1.jpg";
 import zbaaImg from "assets/img/pexels-photo-723240.jpeg";
 
-
 const BASE_API_URL = "https://opensky-network.org/api";
 const querylimit = 10;
 const openSkyApiEndPoints = {
@@ -9,6 +8,10 @@ const openSkyApiEndPoints = {
   allFlights: "/flights/all",
   airportDepartures: "/flights/departure",
   airportArrivals: "/flights/arrival",
+};
+const productEndPoints = {
+  allProducts:
+    "https://g54qw205uk.execute-api.eu-west-1.amazonaws.com/DEV/stub",
 };
 // one day in secs
 const DEFAULT_FLIGHT_INTERVAL = 2 * 60 * 60; // two hour interval in ms
@@ -19,7 +22,7 @@ const MAJOR_AIRPORTS = [
     country: "US",
     IATA: "ATL",
     ICAO: "KATL",
-    avatar: katlImg
+    avatar: katlImg,
   },
   {
     name: "Beijing Capital International Airport",
@@ -101,4 +104,5 @@ export {
   MAJOR_AIRPORTS,
   openSkyApiEndPoints,
   DEFAULT_FLIGHT_INTERVAL,
+  productEndPoints,
 };

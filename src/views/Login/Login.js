@@ -114,7 +114,7 @@ export default function Login() {
           </CardBody>
           <CardFooter>
             <Button color="primary" onClick={signIn}>
-              Update Profile
+              Login
             </Button>
           </CardFooter>
         </Card>

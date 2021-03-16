@@ -15,7 +15,7 @@ const requestErrorHandler = (error) => {
   console.error("Error:", error);
 };
 
-const request = async ({ endpoint, apiUrl='', method = "get", body = {}, query = {} }) => {
+const request = async ({ endpoint, apiUrl='', method = "get", body = {}, query = {}, mode="cors", credentials='omit' }) => {
   console.log("received", endpoint, method, body);
   let url = !apiUrl ? `${BASE_API_URL}${endpoint}` : apiUrl;
   const myHeaders = new Headers({
@@ -23,8 +23,8 @@ const request = async ({ endpoint, apiUrl='', method = "get", body = {}, query =
   });
   const options = {
     method,
-    mode: "cors",
-    credentials: "include",
+    mode,
+    credentials,
     headers: myHeaders,
   };
   if (Object.keys(body).length > 0 && typeof body === "object") {

@@ -78,13 +78,13 @@ const emailsSubscriptionChart = {
     axisX: {
       showGrid: false,
     },
-    low: 0,
-    high: 1000,
+    low: 1000,
+    high: 30000,
     chartPadding: {
       top: 0,
       right: 5,
       bottom: 0,
-      left: 0,
+      left: 10,
     },
   },
   responsiveOptions: [
@@ -130,13 +130,13 @@ const completedTasksChart = {
     lineSmooth: Chartist.Interpolation.cardinal({
       tension: 0
     }),
-    low: 0,
-    high: 1000, 
+    low: 10000,
+    high: 300000, 
     chartPadding: {
       top: 0,
       right: 0,
       bottom: 0,
-      left: 0
+      left: 10
     }
   },
   animation: {
@@ -170,8 +170,27 @@ const completedTasksChart = {
   }
 };
 
+const pieChart = {
+  data: {
+    series: [
+      { value: 20, name: "1" },
+      { value: 10, name: "2" },
+      { value: 70, name: "3" },
+    ],
+    label: ["2014", "2015", "2016", "2017"],
+  },
+  options: {
+    donut: false,
+    // labelInterpolationFnc: function (value) {
+    //   return value[0];
+    // },
+  },
+  type: "Pie",
+};
+
 module.exports = {
   dailySalesChart,
   emailsSubscriptionChart,
-  completedTasksChart
+  completedTasksChart,
+  pieChart
 };
